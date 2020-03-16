@@ -55,5 +55,5 @@ while state == 'playing':
 	print(predict)
 	print(g.get_score())
 	#print(g.get_move_matrix())
-	#sleep(0.05)
+	sleep(0.05)
 	state = g.get_state()
