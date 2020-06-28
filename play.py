@@ -49,10 +49,10 @@ g.print_matrix()
 state = 'playing'
 while state == 'playing':
 	if name == 'nt': 
-        	_ = system('cls') 
+		_ = system('cls') 
     	else: 
-        	_ = system('clear') 
-	
+		_ = system('clear') 
+		
 	predict = loaded_model.predict(matrix_to_array(g.get_move_matrix()))[0]
 	state = g.get_matrix()
 	a = get_movement(predict)
