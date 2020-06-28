@@ -17,6 +17,8 @@ from keras.models import model_from_json
 from keras.applications.vgg16 import VGG16
 from matplotlib import pyplot
 
+from os import system, name
+
 def matrix_to_array(matrix):
 	return np.expand_dims(image.img_to_array(matrix),axis=0)
 
@@ -46,6 +48,11 @@ g.print_matrix()
 
 state = 'playing'
 while state == 'playing':
+	if name == 'nt': 
+        	_ = system('cls') 
+    	else: 
+        	_ = system('clear') 
+	
 	predict = loaded_model.predict(matrix_to_array(g.get_move_matrix()))[0]
 	state = g.get_matrix()
 	a = get_movement(predict)
